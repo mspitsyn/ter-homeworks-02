@@ -18,3 +18,33 @@
 - Параметр `core_fraction=5` указывает базовую производительность ядра в процентах. Указывается для экономии ресурсов. Например, если нужно снизить затраты на содержание ВМ, можно указать, что базовый процент использования CPU — 5.  
   
 ## Решение задания 2  
+Решение в коде проекта.
+
+## Решение задания 3  
+![task-3](screenshots/task-3.png)  
+
+## Решение задания 4  
+![task-4](screenshots/task-4.png)  
+
+## Решение задания 5  
+```yaml
+##locals.tf
+
+locals {
+  project = "netology-develop-platform"
+  type_web = "web"
+  type_db  = "db"
+  vm_web_instance_name = "${local.project}-${local.type_web}"
+  vm_db_instance_name  = "${local.project}-${local.type_db}"
+}
+```  
+```yaml
+#main.tf
+
+resource "yandex_compute_instance" "platform_db" {
+  name        = local.vm_db_instance_name
+  ...
+  }
+```
+## Решение задания 6  
+![task-6](screenshots/task-6.png)

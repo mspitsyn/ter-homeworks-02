@@ -22,7 +22,7 @@ variable "vm_db_platform_id" {
   default     = "standard-v1"
   description = "Стандарт платформы"
 }
-
+/*
 variable "vm_db_cores" {
     type = number
     default = 2
@@ -40,9 +40,15 @@ variable "vm_db_core_fraction" {
     default = 5
     description = "Процент использования"
 }
-
-variable "default_zone_db" {
+*/
+variable "vm_db_default_zone" {
   type        = string
   default     = "ru-central1-b"
   description = "https://cloud.yandex.ru/docs/overview/concepts/geo-scope"
+}
+
+variable "wm_db_default_cidr" {
+  type        = list(string)
+  default     = ["10.0.2.0/24"]
+  description = "https://cloud.yandex.ru/docs/vpc/operations/subnet-create"
 }
